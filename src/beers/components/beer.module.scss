@@ -1,0 +1,36 @@
+
+$width: 200px;
+$height: 300px;
+
+
+.beer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: $height;
+  width: $width;
+  margin: 20px;
+  transform: scale(0);
+
+  background: #ff00981c;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ffffff3d;
+
+  opacity: 0;
+  animation: welcomeBeer 0.5s 0.2s forwards ease-out;
+
+  text-align: center;
+
+  img {
+	height: 40%;
+  }
+}
+
+@keyframes welcomeBeer {
+  100% {
+	opacity: 1;
+	transform: scale(1);
+  }
+}
