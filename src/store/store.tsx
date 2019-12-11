@@ -17,8 +17,9 @@ export default createStore(reducers, composeWithDevTools(applyMiddleware(sagaMid
 
 function* rootSaga() {
 	yield all([
-		beersSagas(),
+		...beersSagas,
 	])
 }
+
 
 sagaMiddleware.run(rootSaga);

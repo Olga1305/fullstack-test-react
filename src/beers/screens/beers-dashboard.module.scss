@@ -9,5 +9,16 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    a {
+      cursor: pointer;
+
+      h4, p {
+        text-decoration: none;
+        color: white;
+      }
+      
+    }
+    
   }
 }

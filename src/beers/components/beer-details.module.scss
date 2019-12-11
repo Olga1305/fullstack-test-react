@@ -1,0 +1,178 @@
+
+.single {
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    margin: 20px;
+    transform: scale(0);
+  
+    background: #ff00981c;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ffffff3d;
+  
+    opacity: 0;
+    animation: welcomeBeer 0.5s 0.2s forwards ease-out;
+  
+    text-align: center;
+
+    .main {
+
+        padding: 50px;
+
+        .title {
+            display: flex;
+            flex-direction: row;
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }        
+
+        img {
+            max-height: 400px;
+            padding-top: 50px;
+        }
+
+        .alc {
+
+            flex-direction: column;
+            margin: 30px;
+
+            .label {
+                font-size: 20px;
+                text-transform: uppercase;
+                line-height: 30px;                
+                display: block;
+                position: relative;
+                padding-bottom: 40px;
+            }
+
+            .abv {
+                background: #000;    
+                border-radius: 70px;
+                height: 80px;
+                width: 80px;
+                padding: 28px 18px;
+                line-height: 0;
+            }
+        }
+    }
+
+    .info {
+        text-align: left;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .tagline {
+            text-align: center;
+        }
+
+        h2, h3 {
+            color: #81badc;            
+        }
+
+        .gravity {
+            display: flex; 
+            align-items: inherit;
+        }
+
+        .point {
+            display: flex;  
+            align-items: center;      
+            margin: 0 20px 20px 20px;
+           
+
+            p {
+                margin-left: 30px;
+            }
+
+            span {
+                font-weight: bold;
+                color: #81badc;
+            }
+        }
+
+        .button {
+            text-align: center;                                  
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;            
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #81badc;
+            padding: 10px 20px;
+            margin: 30px;
+            border-radius: 25px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+          }
+          
+        .button:hover {
+            background: #5898be;
+            text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+            transition: all 0.4s ease 0s;
+        }
+
+        .inactive {
+            display: none;
+        }
+    }  
+    
+}
+
+
+
+@keyframes welcomeBeer {
+  100% {
+	opacity: 1;
+	transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .single {
+        flex-direction: row;
+
+       .main {
+            width: 25%;
+        }
+
+        .info {
+            width: 75%;
+            margin: 50px;
+            display: block;
+
+            .tagline {
+                text-align: left;
+            }   
+
+            .gravity {
+                align-items: baseline;
+
+                h3 {                
+                    margin-right: 40px;
+                }
+
+            }
+            
+            .point {                
+                margin: 0 0 20px 0;                
+            }
+
+            .button {
+                margin: 20px 0;
+            }
+        }
+    }
+
+    
+  }

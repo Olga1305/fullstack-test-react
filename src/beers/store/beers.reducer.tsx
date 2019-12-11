@@ -3,18 +3,25 @@ import { IAction } from '../../store/action.type';
 
 
 interface IBeersStateType {
-	beers: []
+	beers: [],
+	showGravity: boolean,	
 }
 
 
 const initialState: IBeersStateType = {
-	beers: []
+	beers: [],
+	showGravity: false,
 };
 
 const beersReducer = (state = initialState, action: IAction) => {
 	switch (action.type) {
 		case BeersActionsTypes.GET_BEERS_RESPONSE:
-			return {...state, beers: action.payload};
+			const { beers } = action.payload;
+			return {...state, beers};
+		case BeersActionsTypes.GET_GRAVITY_DIFFERENCE:
+			let { showGravity } = state;
+			showGravity = !showGravity;
+			return {...state, showGravity};
 		default:
 			return state;
 	}
