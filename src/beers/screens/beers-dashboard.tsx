@@ -13,7 +13,7 @@ const BeersDashboard = () => {
 	const dispatch = useDispatch();
 	const beers = useSelector((state: any) => state.beersReducer.beers);
 	const hasMore = useSelector((state: any) => state.beersReducer.hasMore);	
-	let searched = useSelector((state: any) => state.beersReducer.searched);
+	const searched = useSelector((state: any) => state.beersReducer.searched);
 
 	useEffect(() => {
 		if (!beers.length) {

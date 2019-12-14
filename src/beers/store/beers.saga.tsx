@@ -5,10 +5,9 @@ import { fetchBeers, getBeersByQuery } from '../api/beers.api';
 
 function* fetchBeersEffect() {
 	try {
-		// const currentPage = yield select((state: any) => state.beersReducer.currentPage)
-		const beers = yield call(fetchBeers);
-		yield put(getBeersResponse(beers));
-		console.log(beers)
+		const currentPage = yield select((state: any) => state.beersReducer.currentPage)
+		const beers = yield call(fetchBeers, currentPage);
+		yield put(getBeersResponse(beers));		
 	} catch (error) {
 		yield put(beersError({
             error: 'An error occurred when trying to get the beers'
@@ -21,7 +20,6 @@ function* fetchSearchBeers() {
 		const query = yield select((state: any) => state.beersReducer.query)
 		const searched = yield call(getBeersByQuery, query);
 		yield put(searchBeersResponse(searched));
-		console.log(searched)
 	} catch (error) {
 		yield put(beersError({
             error: 'An error occurred when trying to search beers'
