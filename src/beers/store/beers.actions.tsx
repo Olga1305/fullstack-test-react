@@ -7,7 +7,9 @@ export enum BeersActionsTypes {
 	SET_ITEMS_CURRENT_PAGE = '[Scroll] set current page',
 	CHECK_IF_HAS_MORE = '[HasMore] check if has more beers',
 	GET_GRAVITY_DIFFERENCE = '[Single] get the difference between original final gravities',
-	SEARCH_BEERS = '[Search] search beers by name',
+	SEARCH_BEERS_REQUEST = '[Search] search beers by name request',
+	SEARCH_BEERS_RESPONSE = '[Search] search beers by name response',
+	SET_SEARCH_QUERY = '[Query] set search query',
 	BEERS_ERROR = '[Error] catch error'
 }
 
@@ -32,8 +34,16 @@ export const getGravityDifference = (): IAction => {
 	return {type: BeersActionsTypes.GET_GRAVITY_DIFFERENCE};
 };
 
-export const searchBeers = (searched: any): IAction => {
-	return {type: BeersActionsTypes.SEARCH_BEERS, payload: searched };
+export const searchBeersRequest = (): IAction => {
+	return {type: BeersActionsTypes.SEARCH_BEERS_REQUEST};
+};
+
+export const searchBeersResponse = (searched: any): IAction => {
+	return {type: BeersActionsTypes.SEARCH_BEERS_RESPONSE, payload: searched };
+};
+
+export const setSearchQuery = (query: any): IAction => {
+	return {type: BeersActionsTypes.SET_SEARCH_QUERY, payload: query};
 };
 
 export const beersError = (error: any): IAction => {

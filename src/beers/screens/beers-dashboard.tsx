@@ -3,7 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import styles from './beers-dashboard.module.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getBeersRequest, searchBeers, setItemsCurrentPage, checkIfHasMore } from '../store/beers.actions';
+import { getBeersRequest, setSearchQuery, searchBeersRequest, setItemsCurrentPage, checkIfHasMore } from '../store/beers.actions';
 import SearchBar from '../components/searchbar.component';
 import Beer from '../components/beer.component';
 
@@ -23,16 +23,11 @@ const BeersDashboard = () => {
 	});
 	
 
-	const findBeer = (query: any) => {		
-		if (query !== '') {
-		    searched = beers.filter((item: any) => {
-				return (item.name.toLowerCase().includes(query.toLowerCase())
-			    );
-		   });			   
-	   } else {
-		   searched = []
-	   }	
-	   dispatch(searchBeers(searched));  
+	const findBeer = (searchQuery: any) => {		
+		if (searchQuery !== '') {	
+		dispatch(setSearchQuery(searchQuery)); 
+		dispatch(searchBeersRequest()); 
+		}
 	};
 
 	return (

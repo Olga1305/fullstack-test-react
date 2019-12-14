@@ -7,7 +7,8 @@ interface IBeersStateType {
 	showGravity: boolean,
 	searched: any[],
 	currentPage: number,
-	hasMore: boolean,	
+	hasMore: boolean,
+	query: string,	
 }
 
 
@@ -17,6 +18,7 @@ const initialState: IBeersStateType = {
 	searched: [],
 	currentPage: 1,
 	hasMore: true,
+	query: '',
 };
 
 
@@ -43,7 +45,9 @@ const beersReducer = (state = initialState, action: IAction) => {
 			let { showGravity } = state;
 			showGravity = !showGravity;
 			return {...state, showGravity};
-		case BeersActionsTypes.SEARCH_BEERS:					
+		case BeersActionsTypes.SET_SEARCH_QUERY:					
+			return {...state, query: action.payload};	
+		case BeersActionsTypes.SEARCH_BEERS_RESPONSE:					
 			return {...state, searched: action.payload};	
 		default:
 			return state;
