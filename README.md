@@ -1,9 +1,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-# < Frontend Test >
+# < Full Stack Test >
+
+## Data fetch
+
+The data of this project is fetch on:
+
+- Branch "master" on public api [Punk API](https://punkapi.com/documentation/v2).
+- Branch "connectedApi" on its own Express app - [Server Repository](https://github.com/Olga1305/fullstack-test-backend). The server runs on [http://localhost:3001/api](http://localhost:3001/api), the MongoDB database runs on [http://localhost:27017/beers](http://localhost:27017/beers)
+---
 
 # Requirements for Frontend Developer
+
+*Important notes*: The project has already set up Redux with redux-saga and axios. FEEL FREE to change those dependencies for something that you are more comfortable with.
+
+*Developer notes*: The project was continued with Redux, redux-saga and axios. 
 
 ## New Features:
 
@@ -18,20 +30,17 @@ This detail page should show at least the information of:
 - Foods that pair with that beer
 - Abv and Ibu
 - Contributor/s
-- It also has to show the difference between Original Gravity and Final gravity
-(target_og and target_fg params).
+- It also has to show the difference between Original Gravity and Final gravity (target_og and target_fg params).
 
 **Requirements:**
 
-✓ When you click on an item on the list, you’ll be sent to a new page with the
-details specified.
+✓ When you click on an item on the list, you’ll be sent to a new page with the details specified.
 
 ✓ You should be able to go back from that page to the list.
 
 ✓ You should be able to refresh the page and still see the details.
 
-✓ Details page will have a button. When you click on it the difference between
-the two gravities will be displayed.
+✓ Details page will have a button. When you click on it the difference between the two gravities will be displayed.
 
 **Status**
 
@@ -67,20 +76,14 @@ there should be some method to paginate the list.
 ✓ If I see 0..n items, in the next page I want to see the n+1..2n items .
 
 *Number of items per page is up to the developer.
-*The method of pagination will be on the developer. It can be with scroll
-detection or other ways. Infinite scroll will be a plus.
+*The method of pagination will be on the developer. It can be with scroll detection or other ways. Infinite scroll will be a plus.
 
 **Status**
 
-All done.
+Done with infinite scroll.
 
 ---
-## Data fetch
 
-The data of this project is fetch on:
-
-- Branch "master" on public api [Punk API](https://punkapi.com/documentation/v2).
-- Branch "connectedApi" on an Express app - [Server Repository](https://github.com/Olga1305/fullstack-test-backend). The server runs on [http://localhost:3001](http://localhost:3001), the MongoDB database runs on [http://localhost:27017/beers](http://localhost:27017/beers)
 
 ## Available Scripts
 
