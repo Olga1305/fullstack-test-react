@@ -16,7 +16,6 @@ const SingleBeer: React.FC<MyProps> = ({ match }) => {
 
 	const dispatch = useDispatch();
 	const beers = useSelector((state: any) => state.beersReducer.beers);
-	const currentPage = useSelector((state: any) => state.beersReducer.currentPage);
 
 	useEffect(() => {
 		if (!beers.length) {
