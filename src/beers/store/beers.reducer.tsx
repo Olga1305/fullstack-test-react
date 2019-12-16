@@ -4,6 +4,9 @@ import { IAction } from '../../store/action.type';
 
 interface IBeersStateType {
 	beers: any[],
+	id: number,
+	beer: any,
+	loading: boolean,
 	showGravity: boolean,
 	searched: any[],
 	currentPage: number,
@@ -14,6 +17,9 @@ interface IBeersStateType {
 
 const initialState: IBeersStateType = {
 	beers: [],
+	id: 0,
+	beer: {},
+	loading: true,
 	showGravity: false,
 	searched: [],
 	currentPage: 1,
@@ -41,6 +47,14 @@ const beersReducer = (state = initialState, action: IAction) => {
 				hasMore = true;
 			}			
 			return {...state, hasMore};	
+		case BeersActionsTypes.SET_SINGLE_ID:			
+			return {...state, id: action.payload};
+		case BeersActionsTypes.GET_SINGLE_RESPONSE:			    	
+			return {...state, beer: action.payload};
+		case BeersActionsTypes.STOP_LOADING:
+			let { loading } = state;
+			loading = false;
+			return {...state, loading};
 		case BeersActionsTypes.GET_GRAVITY_DIFFERENCE:
 			let { showGravity } = state;
 			showGravity = !showGravity;

@@ -9,3 +9,8 @@ export const getBeersByQuery = (query: string): Promise<any> => {
 	return axios.get(`${process.env.REACT_APP_API_URL}/api/${query}`)
 		.then(res => res.data);
 };
+
+export const fetchSingle = (id: number): Promise<any> => {
+	return axios.get(`${process.env.REACT_APP_API_URL}/api/single/${id}`)
+		.then(res => res.data);
+};
