@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Data fetch
 
-The data of this project is fetch on:
+The data of this project is fetched on:
 
 - Branch "master" on public api [Punk API](https://punkapi.com/documentation/v2).
 - Branch "connectedApi" on its own Express app - [Server Repository](https://github.com/Olga1305/fullstack-test-backend). The server runs on [http://localhost:3001/api](http://localhost:3001/api), the MongoDB database runs on [http://localhost:27017/beers](http://localhost:27017/beers)
